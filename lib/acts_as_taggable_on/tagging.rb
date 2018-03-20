@@ -21,6 +21,11 @@ module ActsAsTaggableOn
 
     private
 
+    # setting the prefix for tag_list table
+    def self.table_name_prefix
+      'core_'
+    end
+
     def remove_unused_tags
       if ActsAsTaggableOn.remove_unused_tags
         if ActsAsTaggableOn.tags_counter

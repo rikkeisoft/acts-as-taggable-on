@@ -21,6 +21,11 @@ module ActsAsTaggableOn
     scope :most_used, ->(limit = 20) { order('taggings_count desc').limit(limit) }
     scope :least_used, ->(limit = 20) { order('taggings_count asc').limit(limit) }
 
+    # setting the prefix for tag table
+    def self.table_name_prefix
+      'core_'
+    end
+
     def self.named(name)
       if ActsAsTaggableOn.strict_case_match
         where(["name = #{binary}?", as_8bit_ascii(name)])
