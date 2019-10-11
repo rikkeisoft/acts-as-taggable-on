@@ -77,8 +77,8 @@ module ActsAsTaggableOn
       @tags_counter = true
       @default_parser = DefaultParser
       @force_binary_collation = false
-      @tags_table = :tags
-      @taggings_table = :taggings
+      @tags_table = :core_tags
+      @taggings_table = :core_taggings
     end
 
     def strict_case_match=(force_cs)
